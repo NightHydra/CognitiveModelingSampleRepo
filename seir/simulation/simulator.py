@@ -1,11 +1,18 @@
-
-def simulate_seir(parameters, init_conditions, first_day = 1, last_day=51):
+import numpy as np
+def simulate_seir(parameters : (float), init_conditions : (float), first_day : int = 1, last_day=100):
     """TODO"""
 
     # Extract parameters and initial conditions (Your code here)
-    beta, sigma, gamma = parameters
+    beta, sigma, gamma : float = parameters
     S0, E0, I0, R0 = init_conditions
     N = S0 + E0 + I0 + R0
+
+    model = np.mat( [[None] * (last_day - first_day + 1)] * len(init_conditions) )
+    print (model)
+    print (len(init_conditions))
+
+    model[:, 0] = init_conditions
+
     S = [S0] + [None] * (last_day - first_day)
     E = [E0] + [None] * (last_day - first_day)
     I = [I0] + [None] * (last_day - first_day)

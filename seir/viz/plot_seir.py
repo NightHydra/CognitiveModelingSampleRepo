@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 
 
-def plot_results(infected, day_fontsize = 16, infected_cases_fontsize = 16, 
-    outbreak_test_fontsize = 20, axis_brightness = 0.2 ):
+def plot_results(infected : list[float], day_fontsize : int = 16, infected_cases_fontsize : int = 16, 
+    outbreak_test_fontsize : int = 20, axis_brightness : float = 0.2 ):
     
     """Plots the time series of infected cases."""
     
