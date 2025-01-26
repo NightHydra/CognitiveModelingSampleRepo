@@ -3,20 +3,14 @@ def simulate_seir(parameters : (float), init_conditions : (float), first_day : i
     """TODO"""
 
     # Extract parameters and initial conditions (Your code here)
-    beta, sigma, gamma : float = parameters
+    beta, sigma, gamma = parameters
     S0, E0, I0, R0 = init_conditions
     N = S0 + E0 + I0 + R0
 
-    model = np.mat( [[None] * (last_day - first_day + 1)] * len(init_conditions) )
-    print (model)
-    print (len(init_conditions))
-
-    model[:, 0] = init_conditions
-
-    S = [S0] + [None] * (last_day - first_day)
-    E = [E0] + [None] * (last_day - first_day)
-    I = [I0] + [None] * (last_day - first_day)
-    R = [R0] + [None] * (last_day - first_day)
+    S = np.array([S0] + [np.nan] * (last_day - first_day))
+    E = np.array([E0] + [np.nan] * (last_day - first_day))
+    I = np.array([I0] + [np.nan] * (last_day - first_day))
+    R = np.array([R0] + [np.nan] * (last_day - first_day))
     
     # For each day, perform SEIR update
     for t in range(first_day, last_day):

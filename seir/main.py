@@ -13,7 +13,7 @@ if __name__ == "__main__":
     inits = (9999., 1., 0., 0.)
 
     ### Your code here
-    sim = simulate_seir(parameters, inits, 100)
+    sim = simulate_seir(parameters, inits, 1, 100)
 
     ### Expected result
     f = plot_results(sim[2])
